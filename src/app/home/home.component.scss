@@ -9,13 +9,14 @@
     width: 100%;
 }
 
-.notes-container{
-    background-color: #F7F7F7;
-}
 
-.test-container{
+.sidenav-container{
     height: 100%;
     justify-content: space-between;
+}
+
+mat-sidenav-container{
+    border-radius: 8px;
 }
 
 mat-sidenav {
@@ -69,15 +70,96 @@ mat-sidenav {
 
 .content {
     height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    background-color: #F7F7F7;
 
     color: #5B729A;
-    opacity: 65%;
+
+    .notes-container {
+        width: 65%;
+        height: 100%;
+        padding-top: 24px;
+        
+        .date-container{
+            width: 100%;
+            padding-left: 24px;
+            h3{
+                color: #5B729A;
+                opacity: 35%;
+                font-size: 12px;
+                margin-bottom: 0;
+                text-transform: uppercase;
+            }
+    
+        }
+
+        .my-note-container{
+            width: 100%;
+            height: 100%;
+
+            .note-title{
+                margin-bottom: 16px;
+                height: 36px;
+                h2{
+                    color: #5B729A;
+                    font-size: 32px;
+                    letter-spacing: 1.3px;
+                    margin: 0;
+                    line-height: 42px;
+                    font-weight: 400;
+                }
+            }
+
+            .note-text{
+                height: 100%;
+                
+            }
+
+            .form-container{
+                height: 100%;
+            }
+        }
+        
+        
+        
+    }
+    
+}
+
+.mat-form-field-wrapper{
+    height: 100%;
+    width: 100%;
 }
 
 mat-sidenav-container {
     height: 100%;
     background-color: #F7F7F7;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field .mat-form-field-outline {
+    opacity: 0;
+}
+
+::ng-deep .mat-input-element{
+    font-size: 24px;
+}
+
+.mat-input-element.mat-form-field-autofill-control{
+    font-size: 24px;
+}
+.mat-input-element.mat-form-field-autofill-control::placeholder{
+    color: #a6b6c6;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex{
+    padding: 0;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end,
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border-width: 0px !important;
+    color: #e0e0e0;
 }

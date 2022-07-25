@@ -3,12 +3,12 @@
         <div class="col p-0">
             <mat-sidenav-container>
                 <mat-sidenav>
-                    <div class="test-container display-flex flex-column">
-                        <div class="notes-container d-flex flex-column">
+                    <div class="sidenav-container display-flex flex-column">
+                        <div class="d-flex flex-column">
                             <div>
                                 <h3>Your notes</h3>
                             </div>
-                            <div class="btn-container d-flex flex-column">
+                            <div class="btn-container d-flex flex-column mt-3">
                                 <button mat-button class="menu-button">
                                     <span>Cry me a river</span>
                                 </button>
@@ -32,8 +32,30 @@
                     </div>
                 </mat-sidenav>
                 <mat-sidenav-content>
-                    <div class="content mat-elevation-z8">
-                        Main content here!
+                    <div class="content elevation-z8">
+                        <div class="notes-container d-flex flex-column align-items-center">
+                            <div class="date-container">
+                                <h3>22 September 2021</h3>
+                            </div>
+                            <div class="my-note-container d-flex flex-column mt-2 px-4">
+                                <form [formGroup]="noteGroup" >
+                                    <div class="note-title">
+                                        <mat-form-field dense [style]="'height: 100%; width: 100%'" appearance="outline" class="form-container">
+                                            <input matInput placeholder="type your note title" formControlName="title" >
+                                            <mat-error *ngIf="noteGroup.get('title')?.invalid">erro</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    
+                                    <div class="note-text">
+                                        <mat-form-field dense [style]="'height: 100%; width: 100%'" appearance="outline" class="form-container">
+                                            <textarea [style]="'height: 100%; width: 100%'" cdkTextareaAutosize="true" cdkAutosizeMinRows="1"
+                                            matInput formControlName="text" ></textarea>
+                                            <mat-error *ngIf="noteGroup.get('text')?.invalid">erro</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </mat-sidenav-content>
             </mat-sidenav-container>
